@@ -1,0 +1,99 @@
+aside {
+    width: 600px;
+    height: 360px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    background: white;
+    float: right;
+    margin-left: 800px; 
+    position: fixed;
+}
+
+
+
+aside {
+text-align: center;
+color:rgb(43, 42, 42);
+text-decoration:none;
+font-weight:400;
+font-size:15px;
+padding:10px;
+font-family: Adobe Gothic Std B ;
+letter-spacing:1px;
+
+}
+
+
+
+
+section {
+    width: 400px;
+    height: 420px;
+    margin-top: 90px;
+    margin-left: 300px;
+    margin-bottom: 1500px;
+    background: white;
+    float: left;
+    
+}
+
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: sans-serif;
+}
+.header{
+width: 100%;
+height: 65px;
+background: rgb(255, 255, 255);
+position: fixed;
+}
+.container{
+max-width: 1100px;
+margin: auto;
+}
+.logo{
+float: left;
+line-height: 110px;
+}
+.menu{
+float: right;
+line-height: 110px;
+}
+.menu ul{
+display: flex;
+list-style: none;
+}
+.menu a{
+display: block;
+padding: 10px 20px;
+text-decoration: none;
+color: #000000;
+transition: all 500ms ease;
+width: 130px;
+}
+.menu a:hover{
+background: #65edff;
+color: #fff;
+}
+.menu .submenu{
+background: #65edff57;
+box-shadow: 3px 10px 10px #00000033;
+display: none;
+}
+.menu .submenu li a{
+line-height: 50px;
+}
+.menu ul li a:hover + ul, .menu .submenu:hover{
+display: block;
+}
+/*estilos para la portada*/
+.portada{
+width: 100%;
+height: 800px;
+background: url("https://www.redaccion.com.ar/wp-content/uploads/2019/05/Newsletter_sustentables.gif");
+background-size: 100vw 100vh;
+}

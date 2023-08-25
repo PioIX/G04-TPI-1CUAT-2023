@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ranking</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="/css/Juego.css">   
+  	
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
+< </head>
+<body>
+  
+<
+    <div>
+        <form action="/jugar" method="POST" if="form2" class="container-sm">   
+          <table class="default">
+            <br>
+            <h2>Ranking de Puntos</h2>
+          <ul>
+            
+          </ul>
+          <p> .   PUESTO/USUARIO/PUNTOS</p>
+          <ul>
+             {{#each vector}}
+                      <li>{{this}}</li>
+             {{/each}}
+          </ul>
+         <button  class="btn-registro" type="submit">Continuar </button>  
+       </form>
+        
+       <form action="/login" method="GET" class="container-sm">
+         <input type="submit" class="btn-cancelar" value="Salir">
+       </form>
+
+  </div>
+
+</body>
+</html>       
+

@@ -1,0 +1,191 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  opacity: 1;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #ffffff 40px ), repeating-linear-gradient( #93f2ff55, #93f2ff );
+}
+
+.registro-form {
+  width: 800px;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: auto;
+  margin: 40px auto;
+  background-color: rgb(240, 227, 227);
+  padding: 20px;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.brand-logo {
+  height: 100px;
+  width: 100px;
+  background: url("https://www.plenainclusion.org/discapacidad-intelectual/recurso/objetivos-de-desarrollo-sostenible/");
+  margin: auto;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+
+.registro-form h1 {
+    text-align: center;
+    color: midnightblue;
+    font-size: 28px;
+    padding: 70px 0 10px 0;
+}
+
+.registro-form input[type="password"],
+.registro-form input[type=text] {
+  width: 100%;
+  padding: 15px;
+  border:1px solid #ced4da;
+  margin-bottom: border-box;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+
+h3 {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+  color: #45a049;
+  background-color: #af7faf;
+}
+
+.btn-registro{
+  width: 100%;
+  padding: 15px;
+  background-color: #7fc142;
+  border: 0;
+  box-sizing: border-box;
+  margin-left: 0%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  color: #ffffff;
+}
+
+.btn-cancelar{
+  
+  padding: 15px;
+  background-color: #d33434;
+  border: 0;
+  box-sizing: border-box;
+  margin-top: 7px;
+  border-radius: 5px;
+  margin-left: 0%;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  color: #ffffff;
+  
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  text-align: center;
+
+}
+
+.btn-pregunta{
+  width: 100%;
+  padding: 15px;
+  font-weight: bold;
+  background-color: #9edd28;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: large;
+  color: #ffffff;
+}
+
+.form-group {
+  display: grid;
+  gap: 5px;
+}
+
+label {
+  font-size: 16px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.menu{
+  float: right;
+  line-height: 110px;
+ 
+  }
+  .menu ul{
+  display: flex;
+  list-style: none;
+  }
+  .menu a{
+  display: block;
+  padding: 0px 20px;
+  text-decoration: none;
+  color: #000000;
+  transition: all 500ms ease;
+  }
+  .menu a:hover{
+  background: #65edff;
+  color: #fff;
+  }
+  .menu .submenu{
+  background: #65edff57;
+  box-shadow: 3px 10px 10px #00000033;
+  display: none;
+  }
+  .menu .submenu li a{
+  line-height: 50px;
+  }
+  .menu ul li a:hover + ul, .menu .submenu:hover{
+  display: block;
+  }

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Juego</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="/css/Registro.css">   
+ 	
+    </head>
+<body>
+  <div class="registro-form">
+      <h2>Bienvenido  {{usuario}}</h2>
+      <form action="/jugar" method="POST" class="container-sm">    
+        <button  class="btn-registro" type="submit">Comenzamos a Jugar!!! </button>  
+       </form>
+       <form action="/login" method="GET" class="container-sm">
+        
+             <input type="submit" class="btn-cancelar" value="Cancelar">
+     </form>
+    </div>
+
+</body>
+</html>       
+

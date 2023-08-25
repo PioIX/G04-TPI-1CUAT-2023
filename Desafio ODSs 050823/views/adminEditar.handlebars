@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Menu de Administrador</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="/css/Registro.css">   
+   
+  <!--      <link rel="stylesheet" href= "/public/css/Registro.css" > 
+        <link rel="stylesheet" href= "/public/css/cls.css" >  
+      <link rel="stylesheet" href= "/public/css/styles.css" > -->
+		
+    </head>
+<body>
+  <div class="registro-form">
+      <h2>Editar Pregunta</h2>
+      <form action="/pregunta" method="POST" class="container-sm">    
+        <input type="text" class="form-control" id="pregunta" name="preg" value="" placeholder="Pregunta">
+        <input type="text" class="form-control" id="respuesta" name="resp" value="" placeholder="Respuesta">
+        <input type="text" class="form-control" id="incorrecta1" name="inc1" value="" placeholder="Incorrecta1">
+        <input type="text" class="form-control" id="incorrecta2" name="inc2" value="" placeholder="Incorrecta2">
+        <input type="text" class="form-control" id="incorrecta3" name="inc3" value="" placeholder="Incorrecta3">
+        <input type="text" class="form-control" id="categoria" name="cat" value="" placeholder="Categoria">
+        <button  class="btn-registro" type="submit">Confirmar </button>  
+       </form>
+       <form action="/adminMenu" method="GET" class="container-sm">
+        
+             <input type="submit" class="btn-cancelar" value="Cancelar">
+        
+     </form>
+    </div>
+
+</body>
+</html>       
+

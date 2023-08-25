@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>juego</title>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <link rel="stylesheet" href="/css/Juego.css">   
+  	
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
+
+
+  <script>
+      function myFunction(numero) {
+
+       if (numero == "respuesta") {
+
+         alert("Respuesta Correcta!!!")
+       }else{
+         alert("Respuesta Incorrecta!!!")
+        cargarPregunta('1');
+       }
+      
+      }
+    </script>
+<!--
+<script>
+  var INDEX_PREGUNTA = 0;
+  var CANT = 0;
+  var PUNTOS = 0;
+  cargarPregunta(INDEX_PREGUNTA)
+</script>
+-->
+
+<script>
+
+
+
+baseDePreguntas = [
+{
+    pregunta : "¿Cuál de las siguientes afirmaciones describe mejor el propósito principal de los ODS?",
+    imagen : "/img/objetivos.jpg",
+    respuesta : "Promover la paz y la seguridad internacional. " ,
+     incorrecta1 : "Reducir la desigualdad económica." ,
+     incorrecta2 : "Fomentar la colaboración entre países desarrollados." ,
+     incorrecta3 : "Lograr un desarrollo sostenible a nivel global." ,
+    },    
+
+    {
+        pregunta : "¿Cuál de las siguientes opciones representa un desafío clave en la implementación de los ODS?",
+        imagen : "/img/mundo.jpg",
+        respuesta : "Falta de conciencia pública sobre los problemas globales. " ,
+         incorrecta1 : "Escasez de fondos internacionales." ,
+         incorrecta2 : "Cumplimiento insuficiente de los compromisos gubernamentales." ,
+         incorrecta3 : "Limitada participación de las empresas en la agenda de desarrollo sostenible." ,
+        },    
+        {
+            pregunta : "¿Cuál de los siguientes impactos están relacionados directamente con los ODS?",
+            imagen : "/img/escalera.jpg",
+            respuesta : "Coordinar la ayuda humanitaria en situaciones de crisis. " ,
+             incorrecta1 : "Aumento de la producción de bienes de lujo." ,
+             incorrecta2 : "Reducción de la emisión de gases de efecto invernadero." ,
+             incorrecta3 : "Mayor competencia económica entre naciones." ,
+            },    
+   
+            {
+                pregunta : "¿Qué rol desempeñan los gobiernos nacionales en la implementación de los ODS?",
+                imagen : "/img/objetivos2.jpg",
+                respuesta : "Financiar proyectos de desarrollo en países de bajos ingresos." ,
+                 incorrecta1 : "Establecer políticas y regulaciones para promover los ODS a nivel nacional." ,
+                 incorrecta2 : "Coordinar la ayuda humanitaria en situaciones de crisis." ,
+                 incorrecta3 : "Proporcionar educación sobre los ODS en las escuelas." ,
+                },    
+
+
+                {
+                    pregunta : "¿Cuál de los siguientes impactos están relacionados directamente con los ODS?",
+                    imagen : "/img/objetivos.jpg",
+                    respuesta : "Coordinar la ayuda humanitaria en situaciones de crisis. " ,
+                     incorrecta1 : "Aumento de la producción de bienes de lujo." ,
+                     incorrecta2 : "Reducción de la emisión de gases de efecto invernadero." ,
+                     incorrecta3 : "Mayor competencia económica entre naciones." ,
+                    },    
+
+];
+
+</script>
+
+<script>
+        
+    function score(puntos, usuario) {
+
+    }
+</script>
+
+
+
+
+
+<script>
+        
+    function cargarPregunta(index) {
+
+
+
+
+
+      objetoPregunta = baseDePreguntas[index];
+
+    /*    opciones = [...objetoPregunta.distractores];
+        opciones.push(objetoPregunta.respuesta);
+      for (let i = 0; i < 4; i++) {
+         opciones.sort(() => Math.random() - 0.5);
+      }
+
+      document.getElementById("pregunta").innerHTML = objetoPregunta.pregunta;
+      if (objetoPregunta.imagen) {
+        document.getElementById("imagen").src = objetoPregunta.imagen;
+        document.getElementById("imagen").style.display = "";
+      } else {
+        document.getElementById("imagen").style.display = "none";
+      }
+
+      if (objetoPregunta.ayuda) {
+          document.getElementById("ayuda").style.display = "";
+      } else {
+         document.getElementById("ayuda").style.display = "none";
+      }
+
+      document.getElementById("opcion-1").innerHTML = opciones[0];
+      document.getElementById("opcion-2").innerHTML = opciones[1];
+      document.getElementById("opcion-3").innerHTML = opciones[2];
+      */
+      
+
+      document.getElementById("imagen").src = objetoPregunta.imagen;
+      document.getElementById("imagen").style.display = "";
+
+      document.getElementById("pregunta").innerHTML = objetoPregunta.pregunta;
+      document.getElementById("opcion-1").innerHTML = objetoPregunta.incorrecta1
+      document.getElementById("opcion-2").innerHTML = objetoPregunta.incorrecta2
+      document.getElementById("opcion-3").innerHTML = objetoPregunta.incorrecta3
+      document.getElementById("opcion-4").innerHTML = objetoPregunta.respuesta
+}
+
+    </script>
+
+<script>
+
+  async function seleccionarOpcion(index) {
+    
+
+if (CANT < 6) {
+
+     if (index == "2") {
+        // alert("Respuesta Correcta!!!")
+      await Swal.fire({
+           title: "Respuesta correcta",
+            text: "La respuesta ha sido correcta",
+            icon: "success",
+        });
+
+         PUNTOS++
+         CANT++
+         cargarPregunta(INDEX_PREGUNTA);
+         INDEX_PREGUNTA++;
+       }else{
+        //alert("Respuesta Incorrecta!!!")
+        await Swal.fire({
+          title: "Respuesta incorrecta",
+          text: "La respuesta ha sido incorrecta",
+          icon: "error",
+        });
+        CANT++
+        cargarPregunta(INDEX_PREGUNTA);
+        INDEX_PREGUNTA++;
+       }
+} else {
+await Swal.fire({
+           title: "Juego Terminado",
+            text: `Tu puntaje fue de: ${PUNTOS}/${baseDePreguntas.length}`,
+            icon: "success",
+        });
+
+//---------------
+//---SCORE-------
+
+
+
+//---------------
+ // alert("El juego terminó usted hizo  puntos"  )
+  alert("Reiniciar juego")
+  PUNTOS = 0;
+  CANT = 0;
+  INDEX_PREGUNTA = 0;
+  cargarPregunta(INDEX_PREGUNTA);
+}
+
+     /*
+5  let validezRespuesta = opciones[index] == objetoPregunta.respuesta;
+  if (validezRespuesta) {
+    await Swal.fire({
+      title: "Respuesta correcta",
+      text: "La respuesta ha sido correcta",
+      icon: "success",
+    });
+    puntaje++;
+  } else {
+    await Swal.fire({
+      title: "Respuesta Incorrecta",
+      html: `La respuesta correcta es ${objetoPregunta.respuesta}`,
+      icon: "error",
+    });
+  }
+  INDEX_PREGUNTA++;
+  if (INDEX_PREGUNTA >= baseDePreguntas.length) {
+    await Swal.fire({
+      title: "Juego términado",
+      text: `Tu puntaje fue de: ${puntaje}/${baseDePreguntas.length}`,
+    });
+    INDEX_PREGUNTA = 0;
+    puntaje = 0;
+  }
+  cargarPregunta(INDEX_PREGUNTA);
+  */
+}
+
+</script>
+
+</head>
+
+<body style="background-color: #f4efec; width:100vw; height:100vh;">
+
+
+<script>
+  if INDEX_PREGUNTA == 0{
+   cargarPregunta('1');
+  }
+</script>
+
+
+<div class="box01">
+  <div class="box02" >
+    <img id ="imagen"  width="700px" height="800px" />
+  </div>
+  <div class="box03">
+    <div class="registro-form" >
+      <h2> "Pregunta"  </h2>
+       <h3 id="pregunta" >  </h3>  <br>
+
+<!--  <button onclick="myFunction('inco1')">{{inco1}}</button>
+      <button onclick="myFunction('respuesta')">{{respuesta}}</button> -->
+      <div>
+      <button id="opcion-1" onclick="seleccionarOpcion('1')"></button>
+      </div>
+      <div>
+      <button id="opcion-2" onclick="seleccionarOpcion('2')"></button>
+      </div>
+       <div>
+      <button id="opcion-3" onclick="seleccionarOpcion('3')"></button>
+      </div>
+      <div>
+      <button id="opcion-4" onclick="seleccionarOpcion('4')"></button>
+      </div>
+
+
+     <!-- <form action="/preguntaPuntos" method="POST" if="form1" class="container-sm">   
+        <h3> {{pregunta}} </h3>  
+
+        <button  class="btn-registro" name={{inco1}} type="submit">{{inco1}} </button>  
+        <button  class="btn-registro" type="submit">{{respuesta}} </button>
+        <button  class="btn-registro" type="submit">{{inco2}} </button>  
+        <button  class="btn-registro" type="submit">{{inco3}} </button>    
+       </form>
+       -->
+    </div>
+        <form action="/Puntos" method="GET" if="form2" class="container-sm">   
+       
+         <button  class="btn-registro" type="submit">Ver Ranking </button>  
+       </form>
+
+
+
+  </div>
+</div>
+
+<!--
+  <div class="registro-form">
+      <h2>Pregunta de: {{cat}}</h2>
+      <form action="/pregunta" method="POST" class="container-sm">    
+        <button  class="btn-pregunta" type="submit">{{pregunta}}</button>  
+        <button  class="btn-registro" type="submit">{{inco1}} </button>  
+        <button  class="btn-registro" type="submit">{{respuesta}} </button>
+        <button  class="btn-registro" type="submit">{{inco2}} </button>  
+        <button  class="btn-registro" type="submit">{{inco3}} </button>    
+
+       </form>
+       
+     
+    </div>
+ -->
+ 
+<script src="baseDePreguntas.js"></script>
+
+<script>
+  function carga  verifica(respuesta){
+    console.log("correcta");
+
+  }
+
+
+</script>
+
+<script>
+  var INDEX_PREGUNTA = 0;
+  var CANT = 0;
+  var PUNTOS = 0;
+  cargarPregunta(INDEX_PREGUNTA)
+</script>
+
+
+</body>
+</html>       
+

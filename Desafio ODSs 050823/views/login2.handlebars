@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8"> 
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+       <link rel="stylesheet" href="/css/styles.css">   
+	
+    </head>
+<body>
+
+	<script src="/public/js/dom.js"></script>
+
+ <div class="login-form">
+      <h2>Login de Usuario</h2>
+      <form action="/logueo" method="POST" id="form1" class="container-sm">    
+        <input type="text" class="form-control" id="usuarioId" name="usuario" value="" placeholder="Usuario">
+        <input type="password" class="form-control" id="passwordId" name="password" placeholder="Contraseña">
+        <div>
+          <input type="button" onclick="miFunc()" class="btn-login" value="Ingresar">
+        </div>
+       </form>
+       <a href="registro" class="btn-registro">Registro</a>
+       <a href="/" class="btn-inicio">Inicio</a>
+    </div>
+
+
+<!--
+     <form action="/logueo" method="POST" id="form1" class="container-sm">
+      <div class="mb-3 form-group">
+          <h2>Login de prueba</h2>
+      </div>
+      <div class="mb-3 form-group">
+        <input type="text" class="form-control" id="usuarioId" name="usuario" value="" placeholder="Ingrese un nombre">
+      </div>
+      <div class="mb-3 form-group">
+        <input type="password" class="form-control" id="passwordId" name="password" value="" placeholder="Contraseña">
+      </div>
+      <div class="mb-3 form-check">
+          <input type="button" onclick="miFunc()" class="btn btn-primary" value="Ingresar">
+      </div>
+     </form>
+   --> 
+
+<script>
+  function miFunc() {
+    login();
+  }
+</script>
+
+<script>
+async function putJSON(data) {
+     try{
+           const response = await fetch ("/login", {
+             method: "PUT", 
+            //mode: 'no-cors',
+             headers: {
+             "Content-Type": "application/json",
+          },
+           body: JSON.stringify(data),
+         });
+ 
+         //En result obtengo la respuesta
+         const result = await response.json();
+         //console.log("Success:", result);
+ 
+         if (result.validar == false) {
+          alert("Los datos son incorrectos")
+         } else {
+           document.getElementById("form1").submit()
+         }
+ 
+     } catch (error) {
+       console.error("Error:", error);
+     }
+ }
+
+
+</script>
+
+<script>
+function login() {
+    
+    let usuario = document.getElementById("usuarioId").value
+    let contraseña = document.getElementById("passwordId").value
+        
+    let data = {
+        user: usuario,
+        pass: contraseña
+    }
+    putJSON(data)    
+}
+
+</script>
+
+  <!--
+  <div class="login-form">
+      <h2>Login de Usuario</h2>
+      <form action="/logueo" method="POST" id="form1" class="container-sm">    
+        <input type="text" class="form-control" id="usuarioId" name="usuario" value="" placeholder="Usuario">
+        <input type="password" class="form-control" id="passwordId" name="pass" placeholder="Contraseña">
+        <div class="mb-3 form-check">
+            <input type="button" onclick="login()" class="btn-login" value="Ingresar">
+        </div>
+       </form>
+       <a href="registro" class="btn-registro">Registro</a>
+       <a href="/" class="btn-inicio">Inicio</a>
+    </div>
+-->
+<!--
+<script>
+async function putJSON(data){
+    
+    try{
+           const response = await fetch ("/login", {
+             method: "PUT", 
+             mode: 'no-cors',
+             headers: {
+             "Content-Type": "application/json",
+          },
+           body: JSON.stringify(data),
+         });
+ 
+         //En result obtengo la respuesta
+         const result = await response.json();
+         console.log("Success:", result);
+ 
+         if (result.validar == false) {
+          alert("Los datos son incorrectos")
+         } else {
+            
+           /// location.href = "/juego?pepe"     
+         //  document.getElementById("form1").submit()
+         }
+ 
+     } catch (error) {
+       console.error("Error:", error);
+     }
+ }
+ </script>
+ -->
+ <!--
+ <script>
+
+    function login() {
+      let usuario = document.getElementById("usuarioId").value
+      let contraseña = document.getElementById("passwordId").value
+    
+      let data = {
+         user: usuario,
+         pass: contraseña
+      }
+    putJSON(data)
+    
+}
+
+</script>
+-->
+</body>
+</html>       
+  
